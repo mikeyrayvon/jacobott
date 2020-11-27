@@ -1,14 +1,39 @@
+import { default as NextLink } from 'next/link'
+
 import Container from './Container'
 
-const Header = () => {
+const Header = ({ settings }) => {
   return (
     <header className='pt-4 md:pt-8 pb-8'>
       <Container>
-        <div className='dis-row'>
-          <div className='dis-item mb-4'>
-            <h1>Jacob Ott</h1>
-          </div>
-        </div>
+        <nav>
+          <ul className='dis-row justify-start'>
+            <li className='dis-item flex-shrink mb-4'>
+              <NextLink href={'/'}>
+                <h1><a className='hover:underline cursor-pointer'>Jacob Ott</a></h1>
+              </NextLink>
+            </li>
+            <li className='dis-item flex-shrink mb-4'>
+              <NextLink href={'/cv'}>
+                <a className='hover:underline'>CV</a>
+              </NextLink>
+            </li>
+            {settings.data.portfolio.url &&
+              <li className='dis-item flex-shrink mb-4'>
+                <NextLink href={settings.data.portfolio.url}>
+                  <a className='hover:underline'>Portfolio</a>
+                </NextLink>
+              </li>
+            }
+            {settings.data.email.url &&
+              <li className='dis-item flex-shrink mb-4'>
+                <NextLink href={settings.data.email.url}>
+                  <a className='hover:underline'>Email</a>
+                </NextLink>
+              </li>
+            }
+          </ul>
+        </nav>
       </Container>
     </header>
   )

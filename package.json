@@ -17,11 +17,11 @@
   },
   "devDependencies": {
     "autoprefixer": "^9",
-    "postcss": "^7",
-    "tailwindcss": "^2.0.1-compat",
     "gsap": "^3.5.1",
     "moment-timezone": "^0.5.32",
+    "postcss": "^7",
     "react-mailchimp-subscribe": "^2.1.0",
-    "swiper": "^6.3.5"
+    "swiper": "^6.3.5",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat"
   }
 }
