@@ -1,0 +1,53 @@
+/* purgecss start ignore */
+
+@tailwind base;
+@tailwind components;
+
+/* purgecss end ignore */
+
+.container {
+  width: 96%;
+}
+
+.dis-row {
+  @apply flex flex-wrap md:-mx-12 xl:-mx-20;
+}
+
+.dis-item {
+  @apply w-full md:w-1/2 md:px-12 xl:px-20;
+}
+
+.post-body > * {
+  @apply mb-4;
+}
+
+.post-body h1,
+.post-body h2,
+.post-body h3,
+.post-body h4,
+.post-body h5,
+.post-body h6 {
+  @apply font-semibold;
+}
+
+.post-body a:link {
+  @apply underline;
+}
+
+.embed > div {
+  position: relative;
+  padding-bottom: 56.25%; /*16:9*/
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+}
+
+.embed > div iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@tailwind utilities;
