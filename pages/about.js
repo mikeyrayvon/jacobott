@@ -8,17 +8,17 @@ import { RichText } from 'prismic-reactjs'
 import DefaultLayout from 'layouts'
 import Container from 'components/Container'
 
-const Cv = ({ cv, settings }) => {
+const About = ({ doc, settings }) => {
   return (
     <DefaultLayout settings={settings}>
       <Head>
-        <title>Jacob Ott | CV</title>
+        <title>Jacob Ott | About</title>
       </Head>
-      {cv && cv.data &&
+      {doc && doc.data &&
         <Container>
           <div className='dis-row'>
             <div className='dis-item post-body'>
-              <RichText render={cv.data.body} />
+              <RichText render={doc.data.body} />
             </div>
           </div>
         </Container>
@@ -31,16 +31,16 @@ export async function getStaticProps({ preview = null, previewData = {} }) {
 
   const { ref } = previewData
 
-  const cv = await Client().getSingle('cv') || {}
+  const doc = await Client().getSingle('about') || {}
   const settings = await Client().getSingle('settings') || {}
 
   return {
     props: {
-      cv,
+      doc,
       settings,
       preview
     }
   }
 }
 
-export default Cv
+export default About

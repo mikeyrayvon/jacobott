@@ -14,14 +14,14 @@ const Header = ({ settings }) => {
               </NextLink>
             </li>
             <li className='dis-item flex-shrink mb-4'>
-              <NextLink href={'/cv'}>
-                <a className='hover:underline'>CV</a>
+              <NextLink href={'/about'}>
+                <a className='hover:underline'>About</a>
               </NextLink>
             </li>
             {settings.data.portfolio.url &&
               <li className='dis-item flex-shrink mb-4'>
                 <NextLink href={settings.data.portfolio.url}>
-                  <a className='hover:underline'>Portfolio</a>
+                  <a className='hover:underline'>Documentation</a>
                 </NextLink>
               </li>
             }
