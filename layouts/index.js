@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 import Header from 'components/Header'
 import Footer from 'components/Footer'
@@ -8,14 +8,16 @@ const DefaultLayout = ({ children, settings }) => {
   let timeout
 
   const mouseMoved = (e) => {
-      setMouseMoving(true)
+    setMouseMoving(true)
 
-      clearTimeout(timeout)
-      timeout = setTimeout(() => {
-        console.log('mouseStill');
-        setMouseMoving(false)
-      }, 3000)
+    clearTimeout(timeout)
+    timeout = setTimeout(() => {
+      console.log('mouseStill');
+      setMouseMoving(false)
+    }, 3000)
   }
+
+  useEffect(() => mouseMoved(), []);
 
   return (
     <div className={'layout-wrapper ' + (mouseMoving ? '' : 'napping')} onMouseMove={e => mouseMoved(e)}>
